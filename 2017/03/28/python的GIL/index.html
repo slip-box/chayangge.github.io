@@ -1,0 +1,29 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> python的GIL · 插秧哥's Blog</title><meta name="description" content="python的GIL 线程与进程、单核与多核、并行与并发"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://chayangge.com/atom.xml" title="插秧哥's Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">python的GIL</h1><div class="post-info">Mar 28, 2017</div><div class="post-content"><p>前几天用Python写爬虫，想用多线程写一个能充分调用CPU的高效爬虫，毕竟和js相比，Python天生支持多线程、多进程的，不像js的单线程，一次之能执行一个任务。结果无意间发现了Python的GIL，了解GIL首先要理解一下概念：线程与进程，并行与并发，单核与多核。<br><a id="more"></a></p>
+<h2 id="线程与进程、单核与多核、并行与并发"><a href="#线程与进程、单核与多核、并行与并发" class="headerlink" title="线程与进程、单核与多核、并行与并发"></a>线程与进程、单核与多核、并行与并发</h2><p>线程是进程的子集，也就是一个进程至少包含一个线程，计算机每处理一个任务就是处理一个进程，该进程可能包含了多个线程，比如执行人执行一个跳跃动作（线程），这个动作就是由多个线程完成的，包括膝盖弯曲，脚踝发力，手臂摆动等多个组合动作。</p>
+<p>现在的CPU都是多核了，基本上是4-8核，双核的都少了，多核相当于多个CPU。在古老的年代，CPU处理能力很低，一个单核CPU同时只能执行一个任务（虽然现在也是），这导致听歌只能听歌，播放视频只能播放视频，如果要读写文件CPU必须等着啥也不干，直到文件读取完毕才能计算，这显然不可取，所以目前操作系统采用了以下两个处理方案：</p>
+<ul>
+<li>每个任务都只执行一会，然后切换到其他任务（分时系统）</li>
+<li>每个任务分配优先级权限，操作系统可强制安排优先的任务执行（抢占式）</li>
+</ul>
+<p>所以这形成了多任务完美『并行』的假象（即可听歌、看电影、又可同时敲代码），然而对单核CPU来说这其实是并发：多个任务同时存在，但轮流执行，同一时间只执行一个。想要并行？除非有多个CPU，也就是现在常见的多核CPU。</p>
+<h2 id="Python的多线程与多进程"><a href="#Python的多线程与多进程" class="headerlink" title="Python的多线程与多进程"></a>Python的多线程与多进程</h2><p>以上说了这么多都是操作系统的基本知识，很多语言都能调用系统以多进程，多线程的方式运行，这里排除js，因为js天生单线程，而Python不是，即可多线程又可多进程。如果想让python爬虫执行的更快，可以：</p>
+<ul>
+<li>开启多线程</li>
+<li>开启多进程</li>
+<li>多进程下再开启多线程<br>理论上很完美，但实际上，你会碰到GIL，这个天生的紧箍咒把Python这匹千里马压制的普普通通。</li>
+</ul>
+<p>执行以下代码，在mac的活动监视器中查看CPU利用率：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading, multiprocessing</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        x = x ^ <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(multiprocessing.cpu_count()):</span><br><span class="line">    t = threading.Thread(target=loop)</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure></p>
+<p>上述代码启用了CPU的所有内核一起死循环，按理说每个核该跑满了显示100%，我的是4核，此时监视器应该显示400%，可实际上却显示160%，这说明CPU并没有因Python启用了多线程而充分调度起来。</p>
+<p>语言的编译需要解释器，Python官方的解释器是CPython，也是目前用的最多的解释器，而GIL就存在CPython中，所以Python语言的指的就是CPython中的GIL（Global Interpreter Lock）即全局解释器锁。</p>
+<p>当Python以多线程运行时，本以为可以效率翻倍，然而现实情况是：每个线程在执行前需要获得全局GIL锁才可，线程再多可GIL锁只有一个，一个线程拿到锁，运行100条字节码后必须把锁交出来，让别的线程运行一会——像不像CPU的分时系统？表面是多线程一起执行，实际上是用快速切换的方式，每个执行一会，造成一起执行的假象。</p>
+<p>所以上述代码之所以只用全部CPU的160%，是因为受到了GIL锁的限制。</p>
+<h2 id="有弊就有利"><a href="#有弊就有利" class="headerlink" title="有弊就有利"></a>有弊就有利</h2><p>如果一味抨击GIL的话也是不公平的，如果GIL是万恶的源头的话那么想一想：</p>
+<ul>
+<li>毕竟也有不带GIL的Python解释器，可为什么那些解释器没有被广泛使用呢？</li>
+<li>如果是早期历史遗留问题，为什么Python3 依然没有摘除GIL呢？</li>
+</ul>
+<p>多线程是否真的完美呢？单线程真的很慢吗？并不一定。线程的却换运行需要切换线程上下文，这自然也是一笔开销，CPU忙于多线程的切换工作导致线程运行效率降低，有时反而低于单线程。</p>
+<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>GIL限制了多线程，也就是说GIL针对的是一个进程下的多线程，如果启用多进程呢？进城之间相互独立，也没有『进程锁』的东西，貌似可以，这也是multiprocessing的由来，用multiprocessing创建的多进程再也没有GIL的限制，就能充分利用多核CPU的性能。除此之外还有c语言扩展机制、ctypes等方法，这些没做研究，不敢瞎写。</p>
+<h2 id="单线程的优势"><a href="#单线程的优势" class="headerlink" title="单线程的优势"></a>单线程的优势</h2><p>单线程自然有单线程的优势和应用场景，比如单线程的程序状态单一稳定，没有通信、锁等问题，也不用来回切换上下文，更好的提高CPU使用率。除此之外Nginx、nodeJS、PHP也都是单线程，但针对单线程的弊端也都有优化机制，比如nodeJS的child_process模块。</p>
+<p>总之这是一个取舍问题，根据自己的业务环境，总有适合的技术方案。</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/03/28/公众号爬虫node版/" class="prev">上一篇</a><a href="/2017/03/22/用python抓取公众号文章/" class="next">下一篇</a></div><div class="copyright"><p>© 2015 - 2018 <a href="http://chayangge.com">插秧哥</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
