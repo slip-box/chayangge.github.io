@@ -7,7 +7,7 @@
 <p>但问题是用new之后this将不再指向prototype对象，里面的方法对new后的实例来说全部不能使用！<br>解决方法就是这句：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jQuery.fn.init.prototype = jQuery.prototype;</span><br></pre></td></tr></table></figure></p>
 <p>手动把prototype赋给init的prototype，这样，init作为构造器new出的每个实例都能挂载jQuery.prototype上的方法。</p>
 <p>有空仿照jQuery结构造个小js库，针对移动端高级浏览器，实现各种常见方法，搭配Vue，应该比zepto还简洁。</p>
-</div></article></div></main><footer><div class="paginator"><a href="/2016/09/01/「转载」Responsive-Design常用的媒体查询/" class="prev">PREV</a><a href="/2016/08/22/怎样用迅雷下载百度云盘上的资源？/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+</div></article></div></main><footer><div class="paginator"><a href="/2016/09/01/「转载」Responsive-Design常用的媒体查询/" class="prev">上一篇</a><a href="/2016/08/22/怎样用迅雷下载百度云盘上的资源？/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2016/08/31/jQuery整体架构/';
 var disqus_title = 'jQuery整体架构';
 var disqus_url = 'http://chayangge.com/2016/08/31/jQuery整体架构/';
