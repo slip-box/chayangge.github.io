@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chayangge.com/"/>
-  <updated>2017-11-28T06:33:07.000Z</updated>
+  <updated>2017-09-04T02:19:06.000Z</updated>
   <id>http://chayangge.com/</id>
   
   <author>
@@ -15,34 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>天！居然断更了这么久</title>
-    <link href="http://chayangge.com/2017/11/28/%E5%A4%A9%EF%BC%81%E5%B1%85%E7%84%B6%E6%96%AD%E6%9B%B4%E4%BA%86%E8%BF%99%E4%B9%88%E4%B9%85/"/>
-    <id>http://chayangge.com/2017/11/28/天！居然断更了这么久/</id>
-    <published>2017-11-28T06:31:05.000Z</published>
-    <updated>2017-11-28T06:33:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>天！居然断更了这么久，</p><p>换了份工作，</p><p>把博客拉下了，</p><p>可能还没适应工作节奏吧，</p><p>总感觉时间不够用，</p><p>干活没效率，</p><p>混混沌沌到现在。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;天！居然断更了这么久，&lt;/p&gt;
-&lt;p&gt;换了份工作，&lt;/p&gt;
-&lt;p&gt;把博客拉下了，&lt;/p&gt;
-&lt;p&gt;可能还没适应工作节奏吧，&lt;/p&gt;
-&lt;p&gt;总感觉时间不够用，&lt;/p&gt;
-&lt;p&gt;干活没效率，&lt;/p&gt;
-&lt;p&gt;混混沌沌到现在。&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>中间件</title>
@@ -61,6 +33,35 @@
     
     
       <category term="node" scheme="http://chayangge.com/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>天！居然断更了这么久</title>
+    <link href="http://chayangge.com/2017/08/12/%E5%A4%A9%EF%BC%81%E5%B1%85%E7%84%B6%E6%96%AD%E6%9B%B4%E4%BA%86%E8%BF%99%E4%B9%88%E4%B9%85/"/>
+    <id>http://chayangge.com/2017/08/12/天！居然断更了这么久/</id>
+    <published>2017-08-12T06:31:05.000Z</published>
+    <updated>2018-08-11T17:52:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>天！居然断更了这么久，</p><p>换了份工作，</p><p>把博客落下了，</p><p>适应工作节奏后，</p><p>总感觉时间不够用，</p><p>博客就：拖…</p><p>然后，服务器又到期了，</p><p>要不要买服务器呢？买哪家？</p><p>拖…</p><p>终于又买了服务器，</p><p>换了腾讯云，</p><p>可，备案居然要重新审核，</p><p>拖…</p><p>备案终于过了，</p><p>然而，本地博客跑不起来了，</p><p>还得修，</p><p>拖…</p><p>重装了博客、改了配置、再绑域名、装git、装nginx、nginx.config 等一系列操作，</p><p>终于完成了，</p><p>总耗时接近一年！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;天！居然断更了这么久，&lt;/p&gt;
+&lt;p&gt;换了份工作，&lt;/p&gt;
+&lt;p&gt;把博客落下了，&lt;/p&gt;
+&lt;p&gt;适应工作节奏后，&lt;/p&gt;
+&lt;p&gt;总感觉时间不够用，&lt;/p&gt;
+&lt;p&gt;博客就：拖…&lt;/p&gt;
+&lt;p&gt;然后，服务器又到期了，&lt;/p&gt;
+&lt;p&gt;要不要买服务器呢？买哪家？&lt;/p&gt;
+&lt;p&gt;拖…
+      
+    
+    </summary>
+    
     
   </entry>
   
