@@ -1,0 +1,27 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> MongoDB备忘 · 插秧哥's Blog</title><meta name="description" content="MongoDB备忘 - 插秧哥"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://chayangge.com/atom.xml" title="插秧哥's Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/chayangge" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">MongoDB备忘</h1><div class="post-info">Sep 17, 2018</div><div class="post-content"><p>最近因业务原因，需登录机器手动操作MongoDB，每次操作每次查，现备份一次，方便日后：<br><a id="more"></a></p>
+<ul>
+<li>先登录机器</li>
+<li>链接MongoDB：mongo 10.5.XX.XX:端口</li>
+<li>show dbs</li>
+<li>use 某db</li>
+<li>show tables</li>
+<li>db.sometable.find({‘_id’:’XX’});</li>
+<li>db.sometable.update({条件},{$set:{key:value}},{multi:true}));</li>
+</ul>
+<h3 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.sometable.find(&#123;&apos;url&apos;:&#123;$regex:/key/i&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="新建表"><a href="#新建表" class="headerlink" title="新建表"></a>新建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.createCollection(&apos;表名&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="关闭MongoDB"><a href="#关闭MongoDB" class="headerlink" title="关闭MongoDB"></a>关闭MongoDB</h3><ul>
+<li>先退出：mongo –port 8415（只用端口号登录）</li>
+<li>use admin</li>
+<li>db.shutdownServer()</li>
+</ul>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>cd到MongoDB安装文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod -f mongod.conf</span><br></pre></td></tr></table></figure></div></article></div></main><footer><div class="paginator"><a href="/2018/08/13/Base64/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+var disqus_identifier = '2018/09/17/MongoDB备忘/';
+var disqus_title = 'MongoDB备忘';
+var disqus_url = 'http://chayangge.com/2018/09/17/MongoDB备忘/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//seansun.disqus.com/count.js" async></script><div class="copyright"><p>© 2014 - 2018 <a href="http://chayangge.com">插秧哥</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

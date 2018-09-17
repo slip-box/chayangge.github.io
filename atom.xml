@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chayangge.com/"/>
-  <updated>2018-08-12T16:46:09.000Z</updated>
+  <updated>2018-09-17T07:21:22.000Z</updated>
   <id>http://chayangge.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MongoDB备忘</title>
+    <link href="http://chayangge.com/2018/09/17/MongoDB%E5%A4%87%E5%BF%98/"/>
+    <id>http://chayangge.com/2018/09/17/MongoDB备忘/</id>
+    <published>2018-09-17T06:39:30.000Z</published>
+    <updated>2018-09-17T07:21:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近因业务原因，需登录机器手动操作MongoDB，每次操作每次查，现备份一次，方便日后：<br><a id="more"></a></p><ul><li>先登录机器</li><li>链接MongoDB：mongo 10.5.XX.XX:端口</li><li>show dbs</li><li>use 某db</li><li>show tables</li><li>db.sometable.find({‘_id’:’XX’});</li><li>db.sometable.update({条件},{$set:{key:value}},{multi:true}));</li></ul><h3 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.sometable.find(&#123;&apos;url&apos;:&#123;$regex:/key/i&#125;&#125;)</span><br></pre></td></tr></table></figure><h3 id="新建表"><a href="#新建表" class="headerlink" title="新建表"></a>新建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.createCollection(&apos;表名&apos;)</span><br></pre></td></tr></table></figure><h3 id="关闭MongoDB"><a href="#关闭MongoDB" class="headerlink" title="关闭MongoDB"></a>关闭MongoDB</h3><ul><li>先退出：mongo –port 8415（只用端口号登录）</li><li>use admin</li><li>db.shutdownServer()</li></ul><h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>cd到MongoDB安装文件夹：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod -f mongod.conf</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近因业务原因，需登录机器手动操作MongoDB，每次操作每次查，现备份一次，方便日后：&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="MongoDB" scheme="http://chayangge.com/tags/MongoDB/"/>
+    
+  </entry>
   
   <entry>
     <title>Base64</title>
@@ -431,30 +451,6 @@
     
     
       <category term="shell" scheme="http://chayangge.com/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在阿里云上部署node</title>
-    <link href="http://chayangge.com/2016/12/19/%E5%9C%A8%E9%98%BF%E9%87%8C%E4%BA%91%E4%B8%8A%E9%83%A8%E7%BD%B2node/"/>
-    <id>http://chayangge.com/2016/12/19/在阿里云上部署node/</id>
-    <published>2016-12-19T10:02:38.000Z</published>
-    <updated>2016-12-22T06:52:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>双十一买的阿里云，最低配那种，正常价一年一千多快去拿，双十一当天五百多拿下。</p><h2 id="首先ssh登陆"><a href="#首先ssh登陆" class="headerlink" title="首先ssh登陆"></a>首先ssh登陆</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><p>wget <a href="http://npm.taobao.org/mirrors/node/node-latest.tar.gz" target="_blank" rel="noopener">http://npm.taobao.org/mirrors/node/node-latest.tar.gz</a></p><p>wget <a href="http://npm.taobao.org/mirrors/node/v4.4.7/node-v4.4.7.tar.gz" target="_blank" rel="noopener">http://npm.taobao.org/mirrors/node/v4.4.7/node-v4.4.7.tar.gz</a></p><p>警告：WARNING: C++ compiler too old, need g++ 4.8 or clang++ 3.4 (CXX=g++)</p><p>gcc –version<br>gcc (GCC) 4.4.6 20110731 (AliCloud Linux 4.4.6-3)<br>Copyright © 2010 Free Software Foundation, Inc.<br>本程序是自由软件；请参看源代码的版权声明。本软件没有任何担保；<br>包括没有适销性和某一专用目的下的适用性担保。<br>[root@iZ2ze66hn1pkoq398d17saZ node-v4.4.7]# </p><p>sudo systemctl start nginx   开启nginx</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;双十一买的阿里云，最低配那种，正常价一年一千多快去拿，双十一当天五百多拿下。&lt;/p&gt;
-&lt;h2 id=&quot;首先ssh登陆&quot;&gt;&lt;a href=&quot;#首先ssh登陆&quot; class=&quot;headerlink&quot; title=&quot;首先ssh登陆&quot;&gt;&lt;/a&gt;首先ssh登陆&lt;/h2&gt;&lt;figure
-      
-    
-    </summary>
-    
-    
-      <category term="node" scheme="http://chayangge.com/tags/node/"/>
     
   </entry>
   
