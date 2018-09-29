@@ -16,7 +16,13 @@
 <li>db.shutdownServer()</li>
 </ul>
 <h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>cd到MongoDB安装文件夹：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod -f mongod.conf</span><br></pre></td></tr></table></figure></div></article></div></main><footer><div class="paginator"><a href="/2018/08/13/Base64/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod -f mongod.conf</span><br></pre></td></tr></table></figure>
+<h3 id="复制集"><a href="#复制集" class="headerlink" title="复制集"></a>复制集</h3><p>MongoDB数据库有多个节点时，会包含一个Primary节点和多个Secondary节点，数据先写入Primary节点，其他Secondary再从Primary中同步写入的数据，因此当连接数据库后，光标起始位置会显示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">某某db:PRIMARY&gt;</span><br></pre></td></tr></table></figure></p>
+<p>或：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">某某db:SECONDARY&gt;</span><br></pre></td></tr></table></figure></p>
+<p>当要操作Secondary节点时，由于secondary节点默认不可读，会收到一下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;errmsg&quot; : &quot;not master and slaveOk=false&quot;,</span><br><span class="line">&quot;code&quot; : 13435,</span><br><span class="line">&quot;codeName&quot; : &quot;NotMasterNoSlaveOk&quot;</span><br></pre></td></tr></table></figure></p>
+<p>解决办法，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rs.slaveOk();</span><br></pre></td></tr></table></figure></p>
+<p>但下次连接是依然报错，若想根治，则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.mongorc.js</span><br><span class="line"></span><br><span class="line">增加:rs.slaveOk();</span><br></pre></td></tr></table></figure></p>
+</div></article></div></main><footer><div class="paginator"><a href="/2018/08/13/Base64/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2018/09/17/MongoDB备忘/';
 var disqus_title = 'MongoDB备忘';
 var disqus_url = 'http://chayangge.com/2018/09/17/MongoDB备忘/';
