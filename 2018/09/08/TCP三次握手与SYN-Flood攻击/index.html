@@ -13,7 +13,7 @@
 <li>A:好的，收到！</li>
 </ul>
 <p>中间任何一步的失败都会造成会话的不完整，要么A不能确认B是否转账，要么B不能确认A是否收到汇款。</p>
-<h3 id="SYN-Flood攻击"><a href="#SYN-Flood攻击" class="headerlink" title="SYN Flood攻击"></a>SYN Flood攻击</h3><p>如上所述，B转账后会处于半开放状态，要持续等待两分钟，直到收到A的确认收到汇款消息为止。等待是焦急的，劳神的，是耗费脑细胞的。当成千上万的虚假客户端只发送握手信号SYN，收到服务端信号后，并不再次发起确认信号时，服务端则会占用大量的系统内存来维持等待这些半开放的连接，耗尽系统资源，导致正常的握手请求得不到响应，这就是攻击的原理。</p>
+<h3 id="SYN-Flood攻击"><a href="#SYN-Flood攻击" class="headerlink" title="SYN Flood攻击"></a>SYN Flood攻击</h3><p>如上所述，B转账后会处于半开放状态，要持续等待两分钟，直到收到A的确认收到汇款消息为止。等待是焦急的，劳神的，是耗费脑细胞的。当成千上万的虚假客户端只发送握手信号SYN，收到服务端信号后，并不再次发起确认信号时，服务端则会占用大量的系统内存来维持等待这些半开放的连接，耗尽系统资源，导致正常的握手请求得不到响应，这就是SYN Flood攻击的原理。</p>
 <h3 id="对策"><a href="#对策" class="headerlink" title="对策"></a>对策</h3><ul>
 <li>缩短SYN Timeout时间</li>
 <li>提高半开状态数量</li>
@@ -22,12 +22,12 @@
 </blockquote>
 </li>
 <li>Firewalls and Proxies：<blockquote>
-<p>用防火墙作为客户端和服务端的中间代理，客户端咸鱼防火墙建立三次握手，只有在握手成功后，防火墙再与服务端建立握手，然后防火墙在中间代理数据传输。此时服务端收到的都是正常握手请求。</p>
+<p>用防火墙作为客户端和服务端的中间代理，客户端先与防火墙建立三次握手，只有在握手成功后，防火墙再与服务端建立握手，然后防火墙在中间代理数据传输。此时服务端收到的都是正常握手请求。</p>
 </blockquote>
 </li>
 </ul>
 <p>参考：<a href="https://www.wikiwand.com/en/SYN_flood#" target="_blank" rel="noopener">https://www.wikiwand.com/en/SYN_flood#</a></p>
-</div></article></div></main><footer><div class="paginator"><a href="/2018/09/17/MongoDB备忘/" class="prev">PREV</a><a href="/2018/08/13/Base64/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+</div></article></div></main><footer><div class="paginator"><a href="/2018/09/17/MongoDB备忘/" class="prev">上一篇</a><a href="/2018/08/13/Base64/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2018/09/08/TCP三次握手与SYN-Flood攻击/';
 var disqus_title = 'TCP三次握手与SYN Flood攻击';
 var disqus_url = 'http://chayangge.com/2018/09/08/TCP三次握手与SYN-Flood攻击/';
