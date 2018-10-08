@@ -22,7 +22,7 @@
 <p>当要操作Secondary节点时，由于secondary节点默认不可读，会收到一下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;errmsg&quot; : &quot;not master and slaveOk=false&quot;,</span><br><span class="line">&quot;code&quot; : 13435,</span><br><span class="line">&quot;codeName&quot; : &quot;NotMasterNoSlaveOk&quot;</span><br></pre></td></tr></table></figure></p>
 <p>解决办法，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rs.slaveOk();</span><br></pre></td></tr></table></figure></p>
 <p>但下次连接是依然报错，若想根治，则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.mongorc.js</span><br><span class="line"></span><br><span class="line">增加:rs.slaveOk();</span><br></pre></td></tr></table></figure></p>
-</div></article></div></main><footer><div class="paginator"><a href="/2018/08/13/Base64/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+</div></article></div></main><footer><div class="paginator"><a href="/2018/09/08/TCP三次握手与SYN-Flood攻击/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2018/09/17/MongoDB备忘/';
 var disqus_title = 'MongoDB备忘';
 var disqus_url = 'http://chayangge.com/2018/09/17/MongoDB备忘/';

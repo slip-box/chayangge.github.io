@@ -37,6 +37,33 @@
   </entry>
   
   <entry>
+    <title>TCP三次握手与SYN Flood攻击</title>
+    <link href="http://chayangge.com/2018/09/08/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%B8%8ESYN-Flood%E6%94%BB%E5%87%BB/"/>
+    <id>http://chayangge.com/2018/09/08/TCP三次握手与SYN-Flood攻击/</id>
+    <published>2018-09-08T08:08:07.000Z</published>
+    <updated>2018-10-08T09:12:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>三次握手大家都耳熟能详了：</p><ul><li>客户端发起握手信号SYN（synchronous），然后进入 SYN_SEND 状态，等待服务端响应</li><li>服务端收到信号，返回SYN+ACK（Synchronization-Acknowledgement）信号，声明做好接收消息的准备，并要求客户端也要做好接收消息的准备，然后进入SYN_RCVD状态，也就是半开状态，服务端会持续等待客户端再次发起的确认信息，这个等待时间很长，能达到分钟级别。（注意：这里是攻击的核心点）</li><li>客户端收到消息后，再次发送ACK(Acknowledgement)消息给服务端，声明做好了接收数据的准备</li><li>连接成功</li></ul><h3 id="为什么三次？"><a href="#为什么三次？" class="headerlink" title="为什么三次？"></a>为什么三次？</h3><p>三次是满足一个完整、妥善会话的最小逻辑单元，比如：</p><ul><li>A:能不能借我500块钱？</li><li>B:可以，转账500。</li><li>A:好的，收到！<br>中间任何一步的失败都会造成会话的不完整，要么A不能确认B是否转账，要么B不能确认A是否收到汇款。</li></ul><h3 id="SYN-Flood攻击"><a href="#SYN-Flood攻击" class="headerlink" title="SYN Flood攻击"></a>SYN Flood攻击</h3><p>如上所述，B转账后会处于半开放状态，要持续等待两分钟，直到收到A的确认收到汇款消息为止。等待是焦急的，劳神的，是耗费脑细胞的。当成千上万的虚假客户端只发送握手信号SYN，收到服务端信号后，并不再次发起确认信号时，服务端则会占用大量的系统内存来维持等待这些半开放的连接，耗尽系统资源，导致正常的握手请求得不到响应，这就是攻击的原理。</p><h3 id="对策"><a href="#对策" class="headerlink" title="对策"></a>对策</h3><ul><li>缩短SYN Timeout时间</li><li>提高半开状态数量</li><li>SYN cookie：<blockquote><p>服务端收到握手信号SYN，在返回SYN+ACK时对ACK进行加密，加密信息包含原地址、端口、目标地址，总之能标识是谁发来的信息，然后不进入半开放状态，直接释放所以状态，这样省去了维持等待所耗费的系统资源，当收到客户端字再次发起的ACK信号时，计算是否为上个SYN+ACK消息的返回，如果是则直接进入连接状态。</p></blockquote></li><li>Firewalls and Proxies：<blockquote><p>用防火墙作为客户端和服务端的中间代理，客户端咸鱼防火墙建立三次握手，只有在握手成功后，防火墙再与服务端建立握手，然后防火墙在中间代理数据传输。此时服务端收到的都是正常握手请求。</p></blockquote></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;三次握手大家都耳熟能详了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;客户端发起握手信号SYN（synchronous），然后进入 SYN_SEND 状态，等待服务端响应&lt;/li&gt;
+&lt;li&gt;服务端收到信号，返回SYN+ACK（Synchronizatio
+      
+    
+    </summary>
+    
+    
+      <category term="TCP" scheme="http://chayangge.com/tags/TCP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Base64</title>
     <link href="http://chayangge.com/2018/08/13/Base64/"/>
     <id>http://chayangge.com/2018/08/13/Base64/</id>
@@ -424,27 +451,6 @@
     
     
       <category term="node" scheme="http://chayangge.com/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>制作自己的IconFont</title>
-    <link href="http://chayangge.com/2016/12/16/%E5%88%B6%E4%BD%9C%E8%87%AA%E5%B7%B1%E7%9A%84IconFont/"/>
-    <id>http://chayangge.com/2016/12/16/制作自己的IconFont/</id>
-    <published>2016-12-16T11:02:08.000Z</published>
-    <updated>2018-07-01T07:25:13.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>IconFont已经广为熟知了，与图片相比其优势自然不言而喻，下面就是简单介绍一下其制作过程：</p><h2 id="所用工具fontLab"><a href="#所用工具fontLab" class="headerlink" title="所用工具fontLab"></a>所用工具fontLab</h2><p><img src="http://7xprui.com1.z0.glb.clouddn.com/icon5.png" alt="fontLab"><br><a id="more"></a><br>fontLab可以用来修改或创建图标样式。</p><h2 id="制作过程"><a href="#制作过程" class="headerlink" title="制作过程"></a>制作过程</h2><p>用fontLab打开一个字体文件或创建一个，至于修改过程类似ps，如果ps比较熟的话，一般这类软件应该很容易操作。<br><img src="http://7xprui.com1.z0.glb.clouddn.com/icon6.png" alt="打开后的字体文件"><br>双击打开一个字符，即可在原有图形的基础上修改，也可从新创建，一下就是演示用的一个图标（不太规范）：<br><img src="http://7xprui.com1.z0.glb.clouddn.com/icon1.png" alt="编辑样式"><br>编辑好后，保存，file -&gt; generate font 生成字体文件(.ttf)即可。这里一定要记住该字符的unicode，写在css里，对浏览器来说，unicode就是字符，两者是一对一关系的。比如：”A”的unicode是”\u0041”,所以有：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"\u0041"</span> === <span class="string">"A"</span>  <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p><h2 id="css部分"><a href="#css部分" class="headerlink" title="css部分"></a>css部分</h2><p>我们常用的字体都是系统默认的，比如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span>&#123;</span><br><span class="line"> <span class="attribute">font-family</span>: <span class="string">'微软雅黑'</span>;</span><br><span class="line"> <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>所以，怎样才能让自己定义的字体被css使用呢？——用@font-face：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">'iconfont'</span>;</span><br><span class="line">  src: url('./fonts/test.ttf') format('truetype'); // 还有.woff .eot .svg格式</span><br><span class="line">  <span class="selector-tag">font-weight</span>: <span class="selector-tag">normal</span>;</span><br><span class="line">  <span class="selector-tag">font-style</span>: <span class="selector-tag">normal</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>自己制作的字体定义为iconfont后，就可以使用了，和系统默认的使用方法一样：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test</span>&#123;</span><br><span class="line"> <span class="attribute">font-family</span>: <span class="string">'iconfont'</span>;</span><br><span class="line"> <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>这时候就可以使用字体图标了：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>测试自己制作的Icon Font：<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"test-icon-font"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p>新建个空标签i，把字体作用在其伪元素上：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.test-icon-font</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">'iconfont'</span>;</span><br><span class="line">  <span class="attribute">text-rendering</span>: auto;</span><br><span class="line">  <span class="attribute">-webkit-font-smoothing</span>: antialiased;</span><br><span class="line">  <span class="attribute">-moz-osx-font-smoothing</span>: grayscale;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.test-icon-font</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">'\f00c'</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">80px</span>;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>好了，刷新见效（丑了点哈）：<br><img src="http://7xprui.com1.z0.glb.clouddn.com/icon4.png" alt="自制的图标"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;IconFont已经广为熟知了，与图片相比其优势自然不言而喻，下面就是简单介绍一下其制作过程：&lt;/p&gt;
-&lt;h2 id=&quot;所用工具fontLab&quot;&gt;&lt;a href=&quot;#所用工具fontLab&quot; class=&quot;headerlink&quot; title=&quot;所用工具fontLab&quot;&gt;&lt;/a&gt;所用工具fontLab&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xprui.com1.z0.glb.clouddn.com/icon5.png&quot; alt=&quot;fontLab&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="css" scheme="http://chayangge.com/tags/css/"/>
     
   </entry>
   
