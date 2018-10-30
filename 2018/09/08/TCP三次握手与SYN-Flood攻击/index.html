@@ -1,15 +1,16 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> TCP三次握手与SYN Flood攻击 · 插秧哥's Blog</title><meta name="description" content="TCP三次握手与SYN Flood攻击 - 插秧哥"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://chayangge.com/atom.xml" title="插秧哥's Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/chayangge" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">TCP三次握手与SYN Flood攻击</h1><div class="post-info">Sep 8, 2018</div><div class="post-content"><a id="more"></a>
 <p>三次握手大家都耳熟能详了：</p>
 <ul>
-<li>客户端发起握手信号SYN（synchronous），然后进入 SYN_SEND 状态，等待服务端响应</li>
+<li>客户端发起握手信号SYN（Synchronize Sequence Numbers），然后进入 SYN_SEND 状态，等待服务端响应</li>
 <li>服务端收到信号，返回SYN+ACK（Synchronization-Acknowledgement）信号，声明做好接收消息的准备，并要求客户端也要做好接收消息的准备，然后进入SYN_RCVD状态，也就是半开状态，服务端会持续等待客户端再次发起的确认信息，这个等待时间很长，能达到分钟级别。（注意：这里是攻击的核心点）</li>
 <li>客户端收到消息后，再次发送ACK(Acknowledgement)消息给服务端，声明做好了接收数据的准备</li>
 <li>连接成功</li>
 </ul>
-<h3 id="为什么三次？"><a href="#为什么三次？" class="headerlink" title="为什么三次？"></a>为什么三次？</h3><p>三次是满足一个完整、妥善会话的最小逻辑单元，比如：</p>
+<h3 id="为什么三次？"><a href="#为什么三次？" class="headerlink" title="为什么三次？"></a>为什么三次？</h3><p>因为通信双方要互相告知自己的Sequence Numbers，这个序号将作为后续通讯的数字信号，TCP会议这个序号来拼接数据，以保证数据段的顺序。相当于两人如果发生转账，必须要先知到彼此的账号一样。</p>
+<p>其次，三次是满足一个完整、妥善会话的最小逻辑单元，比如：</p>
 <ul>
-<li>A:能不能借我500块钱？</li>
-<li>B:可以，转账500。</li>
+<li>A:我账号是001，求汇款500元？</li>
+<li>B:可以，我的账号002，已向你转账500。</li>
 <li>A:好的，收到！</li>
 </ul>
 <p>中间任何一步的失败都会造成会话的不完整，要么A不能确认B是否转账，要么B不能确认A是否收到汇款。</p>
@@ -27,7 +28,7 @@
 </li>
 </ul>
 <p>参考：<a href="https://www.wikiwand.com/en/SYN_flood#" target="_blank" rel="noopener">https://www.wikiwand.com/en/SYN_flood#</a></p>
-</div></article></div></main><footer><div class="paginator"><a href="/2018/09/17/MongoDB备忘/" class="prev">上一篇</a><a href="/2018/08/13/Base64/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+</div></article></div></main><footer><div class="paginator"><a href="/2018/09/17/MongoDB备忘/" class="prev">PREV</a><a href="/2018/08/13/Base64/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2018/09/08/TCP三次握手与SYN-Flood攻击/';
 var disqus_title = 'TCP三次握手与SYN Flood攻击';
 var disqus_url = 'http://chayangge.com/2018/09/08/TCP三次握手与SYN-Flood攻击/';

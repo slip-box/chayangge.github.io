@@ -41,9 +41,9 @@
     <link href="http://chayangge.com/2018/09/08/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%B8%8ESYN-Flood%E6%94%BB%E5%87%BB/"/>
     <id>http://chayangge.com/2018/09/08/TCP三次握手与SYN-Flood攻击/</id>
     <published>2018-09-08T08:08:07.000Z</published>
-    <updated>2018-10-08T12:27:27.000Z</updated>
+    <updated>2018-10-30T01:42:33.000Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><p>三次握手大家都耳熟能详了：</p><ul><li>客户端发起握手信号SYN（synchronous），然后进入 SYN_SEND 状态，等待服务端响应</li><li>服务端收到信号，返回SYN+ACK（Synchronization-Acknowledgement）信号，声明做好接收消息的准备，并要求客户端也要做好接收消息的准备，然后进入SYN_RCVD状态，也就是半开状态，服务端会持续等待客户端再次发起的确认信息，这个等待时间很长，能达到分钟级别。（注意：这里是攻击的核心点）</li><li>客户端收到消息后，再次发送ACK(Acknowledgement)消息给服务端，声明做好了接收数据的准备</li><li>连接成功</li></ul><h3 id="为什么三次？"><a href="#为什么三次？" class="headerlink" title="为什么三次？"></a>为什么三次？</h3><p>三次是满足一个完整、妥善会话的最小逻辑单元，比如：</p><ul><li>A:能不能借我500块钱？</li><li>B:可以，转账500。</li><li>A:好的，收到！</li></ul><p>中间任何一步的失败都会造成会话的不完整，要么A不能确认B是否转账，要么B不能确认A是否收到汇款。</p><h3 id="SYN-Flood攻击"><a href="#SYN-Flood攻击" class="headerlink" title="SYN Flood攻击"></a>SYN Flood攻击</h3><p>如上所述，B转账后会处于半开放状态，要持续等待两分钟，直到收到A的确认收到汇款消息为止。等待是焦急的，劳神的，是耗费脑细胞的。当成千上万的虚假客户端只发送握手信号SYN，收到服务端信号后，并不再次发起确认信号时，服务端则会占用大量的系统内存来维持等待这些半开放的连接，耗尽系统资源，导致正常的握手请求得不到响应，这就是SYN Flood攻击的原理。</p><h3 id="对策"><a href="#对策" class="headerlink" title="对策"></a>对策</h3><ul><li>缩短SYN Timeout时间</li><li>提高半开状态数量</li><li>SYN cookie：<blockquote><p>服务端收到握手信号SYN，在返回SYN+ACK时对ACK进行加密，加密信息包含原地址、端口、目标地址，总之能标识是谁发来的信息，然后不进入半开放状态，直接释放所以状态，这样省去了维持等待所耗费的系统资源，当收到客户端字再次发起的ACK信号时，计算是否为上个SYN+ACK消息的返回，如果是则直接进入连接状态。</p></blockquote></li><li>Firewalls and Proxies：<blockquote><p>用防火墙作为客户端和服务端的中间代理，客户端先与防火墙建立三次握手，只有在握手成功后，防火墙再与服务端建立握手，然后防火墙在中间代理数据传输。此时服务端收到的都是正常握手请求。</p></blockquote></li></ul><p>参考：<a href="https://www.wikiwand.com/en/SYN_flood#" target="_blank" rel="noopener">https://www.wikiwand.com/en/SYN_flood#</a></p>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a><p>三次握手大家都耳熟能详了：</p><ul><li>客户端发起握手信号SYN（Synchronize Sequence Numbers），然后进入 SYN_SEND 状态，等待服务端响应</li><li>服务端收到信号，返回SYN+ACK（Synchronization-Acknowledgement）信号，声明做好接收消息的准备，并要求客户端也要做好接收消息的准备，然后进入SYN_RCVD状态，也就是半开状态，服务端会持续等待客户端再次发起的确认信息，这个等待时间很长，能达到分钟级别。（注意：这里是攻击的核心点）</li><li>客户端收到消息后，再次发送ACK(Acknowledgement)消息给服务端，声明做好了接收数据的准备</li><li>连接成功</li></ul><h3 id="为什么三次？"><a href="#为什么三次？" class="headerlink" title="为什么三次？"></a>为什么三次？</h3><p>因为通信双方要互相告知自己的Sequence Numbers，这个序号将作为后续通讯的数字信号，TCP会议这个序号来拼接数据，以保证数据段的顺序。相当于两人如果发生转账，必须要先知到彼此的账号一样。</p><p>其次，三次是满足一个完整、妥善会话的最小逻辑单元，比如：</p><ul><li>A:我账号是001，求汇款500元？</li><li>B:可以，我的账号002，已向你转账500。</li><li>A:好的，收到！</li></ul><p>中间任何一步的失败都会造成会话的不完整，要么A不能确认B是否转账，要么B不能确认A是否收到汇款。</p><h3 id="SYN-Flood攻击"><a href="#SYN-Flood攻击" class="headerlink" title="SYN Flood攻击"></a>SYN Flood攻击</h3><p>如上所述，B转账后会处于半开放状态，要持续等待两分钟，直到收到A的确认收到汇款消息为止。等待是焦急的，劳神的，是耗费脑细胞的。当成千上万的虚假客户端只发送握手信号SYN，收到服务端信号后，并不再次发起确认信号时，服务端则会占用大量的系统内存来维持等待这些半开放的连接，耗尽系统资源，导致正常的握手请求得不到响应，这就是SYN Flood攻击的原理。</p><h3 id="对策"><a href="#对策" class="headerlink" title="对策"></a>对策</h3><ul><li>缩短SYN Timeout时间</li><li>提高半开状态数量</li><li>SYN cookie：<blockquote><p>服务端收到握手信号SYN，在返回SYN+ACK时对ACK进行加密，加密信息包含原地址、端口、目标地址，总之能标识是谁发来的信息，然后不进入半开放状态，直接释放所以状态，这样省去了维持等待所耗费的系统资源，当收到客户端字再次发起的ACK信号时，计算是否为上个SYN+ACK消息的返回，如果是则直接进入连接状态。</p></blockquote></li><li>Firewalls and Proxies：<blockquote><p>用防火墙作为客户端和服务端的中间代理，客户端先与防火墙建立三次握手，只有在握手成功后，防火墙再与服务端建立握手，然后防火墙在中间代理数据传输。此时服务端收到的都是正常握手请求。</p></blockquote></li></ul><p>参考：<a href="https://www.wikiwand.com/en/SYN_flood#" target="_blank" rel="noopener">https://www.wikiwand.com/en/SYN_flood#</a></p>]]></content>
     
     <summary type="html">
     
@@ -52,8 +52,8 @@
         &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;三次握手大家都耳熟能详了：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;客户端发起握手信号SYN（synchronous），然后进入 SYN_SEND 状态，等待服务端响应&lt;/li&gt;
-&lt;li&gt;服务端收到信号，返回SYN+ACK（Synchronizatio
+&lt;li&gt;客户端发起握手信号SYN（Synchronize Sequence Numbers），然后进入 SYN_SEND 状态，等待服务端响应&lt;/li&gt;
+&lt;li&gt;服务端收到信号，返回SYN+A
       
     
     </summary>
