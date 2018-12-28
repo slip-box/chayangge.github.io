@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chayangge.com/"/>
-  <updated>2018-12-23T17:50:45.000Z</updated>
+  <updated>2018-12-28T08:59:12.000Z</updated>
   <id>http://chayangge.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>笔尖下的深刻——村上春树</title>
+    <link href="http://chayangge.com/2018/12/28/%E7%AC%94%E5%B0%96%E4%B8%8B%E7%9A%84%E6%B7%B1%E5%88%BB%E2%80%94%E2%80%94%E6%9D%91%E4%B8%8A%E6%98%A5%E6%A0%91/"/>
+    <id>http://chayangge.com/2018/12/28/笔尖下的深刻——村上春树/</id>
+    <published>2018-12-28T08:57:33.000Z</published>
+    <updated>2018-12-28T08:59:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>文章太美，忍不住挂载博客上：<br><a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">每一个人都有属于自己的一片森林，迷失的人迷失了，相逢的人会再相逢。</span><br><span class="line"></span><br><span class="line">如果我爱你，而你也正巧的爱我。你头发乱了时候，我会笑笑的替你拨一波，然后，手还留恋的在你发上多待几秒。但是，如果我爱你，而你不巧的不爱我。你头发乱了，我只会轻轻的告诉你，你头发乱了喔。这大概是最纯粹的爱情观，如若相爱，便携手到老;如若错过，便护他安好。</span><br><span class="line"></span><br><span class="line">尽管世界上有那般广阔的空间，而容纳你的空间——虽然只需一点点——却无处可寻。</span><br><span class="line"></span><br><span class="line">于是我关闭我的语言，关闭我的心，深沉的悲哀是连眼泪这形式都无法采取的东西。</span><br><span class="line"></span><br><span class="line">你要做一个不动声色的大人了。不准情绪化，不准偷偷想念，不准回头看。去过自己另外的生活。你要听话，不是所有的鱼都会生活在同一片海里。</span><br><span class="line"></span><br><span class="line">我一直以为人是慢慢变老的，其实不是，人是一瞬间变老。</span><br><span class="line"></span><br><span class="line">试着这样想：我们每一个人，都或多或少地，是一枚鸡蛋。我们每一个人都是一个独特的、不可替代的灵魂，而这灵魂覆盖着一个脆弱的外壳。这就是我自己的真相，而且这也是你们每一个人的真相。</span><br><span class="line"></span><br><span class="line">不管全世界所有人怎么说，我都认为自己的感受才是正确的。无论别人怎么看，我绝不打乱自己的节奏。喜欢的事自然可以坚持，不喜欢的怎么也长久不了。</span><br><span class="line"></span><br><span class="line">每一次，当他伤害我时，我会用过去那些美好的回忆来原谅他，然而，再美好的回忆也有用完的一天，到了最后只剩下回忆的残骸，一切都变成了折磨，也许我的确是从来不认识他。</span><br><span class="line"></span><br><span class="line">这是个无情的世界，因为有希望的地方就必定有磨炼。</span><br><span class="line"></span><br><span class="line">孤独一人也没关系，只要能发自内心地爱着一个人，人生就会有救。哪怕不能和他生活在一起。</span><br><span class="line"></span><br><span class="line">人，人生，在本质上是孤独的，无奈的。所以需要与人交往，以求相互理解。然而相互理解果真可能吗?不，不可能，宿命式的不可能，寻求理解的努力是徒劳的。与其勉强通过交往来消灭孤独，化解无奈，莫如退回来把玩孤独，把玩无奈!</span><br><span class="line"></span><br><span class="line">世界上有什么不会失去的东西吗？我相信有，你也最好相信。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;文章太美，忍不住挂载博客上：&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>webpack loader</title>
@@ -419,26 +437,6 @@
     
     
       <category term="杂的文" scheme="http://chayangge.com/tags/%E6%9D%82%E7%9A%84%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>瞬间爱上命令行</title>
-    <link href="http://chayangge.com/2017/01/12/%E7%9E%AC%E9%97%B4%E7%88%B1%E4%B8%8A%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    <id>http://chayangge.com/2017/01/12/瞬间爱上命令行/</id>
-    <published>2017-01-12T02:04:55.000Z</published>
-    <updated>2017-01-12T02:59:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>前端其实命令行用的并不多，无非cd cat vi ，连mkdir都很少用到，也就一直没怎么注意过shell，听说程序员会为了省去2小时的麻烦而花4小时写个脚本，只是当个段子听听，完全体会不到背后的乐趣，可今天的一个事，让我彻底爱上命令行。<br><a id="more"></a><br>我参加了一个github公共项目，里面每个人都有提交代码，一直很想把优秀的前10名同学的代码clone下来，但github在国内的访问速度有多慢大家也都知道，再加上需要来回切换网页，挨个找到项目地址，再新建文件夹clone，下载速度很慢，且项目名都相同，必须挨个新建不重名的文件夹后再clone进去，总之：步骤繁杂，网速也慢，费时费力——这是程序员无法忍受的。</p><p>我想起了那个段子，心想要不要写个脚本呢？</p><p>抱着知难而退的犹豫态度，我看了下需求情况：发现在一个公共github项目中，各用户的仓库地址都是以项目名.git结尾，前面除用户名以外，其余都一样，比如：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/用户名/项目名.git</span><br></pre></td></tr></table></figure><p>只有用户名变动，那就好办了，感觉可行，就立马找了个简单的shell教程，把要拷贝的用户名填进数组里，然后接下来的逻辑就很简单了，从查看语法到写出脚本，花了十来分钟：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/sh</span><br><span class="line">mkdir test_shell</span><br><span class="line">cd test_shell</span><br><span class="line"></span><br><span class="line">namelist=("username" "username" "username" "username" "username" "username" "username" "username" "username")</span><br><span class="line">for data in $&#123;namelist[@]&#125;  </span><br><span class="line">do  </span><br><span class="line">mkdir $&#123;data&#125;</span><br><span class="line">cd $&#123;data&#125;</span><br><span class="line">git clone https://github.com/$&#123;data&#125;/projectname.git</span><br><span class="line">cd ..</span><br><span class="line">    echo $&#123;data&#125;  </span><br><span class="line">done</span><br></pre></td></tr></table></figure><p>就这么抱着试试的态度运行了一遍：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh test.sh //真的只是试试，文件名还是test</span><br></pre></td></tr></table></figure><p>就一遍，一下就跑通了，看着终端在屏幕上自动打印的一行行进度提示，我简直惊呆了，短短几分钟，在自动创建的文件夹下，挨个clone完毕，我只是执行了下命令，中间没有任何多余操作，真爽！</p><p>感觉shell是世界上最好的语言！有木有！</p><p>瞬间爱上命令行。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前端其实命令行用的并不多，无非cd cat vi ，连mkdir都很少用到，也就一直没怎么注意过shell，听说程序员会为了省去2小时的麻烦而花4小时写个脚本，只是当个段子听听，完全体会不到背后的乐趣，可今天的一个事，让我彻底爱上命令行。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="shell" scheme="http://chayangge.com/tags/shell/"/>
     
   </entry>
   
