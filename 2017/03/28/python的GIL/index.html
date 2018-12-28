@@ -26,7 +26,7 @@
 <h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>GIL限制了多线程，也就是说GIL针对的是一个进程下的多线程，如果启用多进程呢？进城之间相互独立，也没有『进程锁』的东西，貌似可以，这也是multiprocessing的由来，用multiprocessing创建的多进程再也没有GIL的限制，就能充分利用多核CPU的性能。除此之外还有c语言扩展机制、ctypes等方法，这些没做研究，不敢瞎写。</p>
 <h2 id="单线程的优势"><a href="#单线程的优势" class="headerlink" title="单线程的优势"></a>单线程的优势</h2><p>单线程自然有单线程的优势和应用场景，比如单线程的程序状态单一稳定，没有通信、锁等问题，也不用来回切换上下文，更好的提高CPU使用率。除此之外Nginx、nodeJS、PHP也都是单线程，但针对单线程的弊端也都有优化机制，比如nodeJS的child_process模块。</p>
 <p>总之这是一个取舍问题，根据自己的业务环境，总有适合的技术方案。</p>
-</div></article></div></main><footer><div class="paginator"><a href="/2017/03/28/公众号爬虫node版/" class="prev">上一篇</a><a href="/2017/03/22/用python抓取公众号文章/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+</div></article></div></main><footer><div class="paginator"><a href="/2017/03/28/公众号爬虫node版/" class="prev">PREV</a><a href="/2017/03/22/用python抓取公众号文章/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2017/03/28/python的GIL/';
 var disqus_title = 'python的GIL';
 var disqus_url = 'http://chayangge.com/2017/03/28/python的GIL/';
