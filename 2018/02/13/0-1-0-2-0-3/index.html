@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 0.1 + 0.2 !== 0.3 · 插秧哥's Blog</title><meta name="description" content="0.1 + 0.2 !== 0.3 - 插秧哥"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://chayangge.com/atom.xml" title="插秧哥's Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/chayangge" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">0.1 + 0.2 !== 0.3</h1><div class="post-info">Feb 13, 2019</div><div class="post-content"><p>老生常谈的问题了，之前查过一次，模糊记得js、java等语言都存在此问题，后来原因又忘了，最近碰到，再补充一下。</p>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 0.1 + 0.2 !== 0.3 · 插秧哥's Blog</title><meta name="description" content="0.1 + 0.2 !== 0.3 - 插秧哥"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://chayangge.com/atom.xml" title="插秧哥's Blog"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/chayangge" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/about" target="_self" class="nav-list-link">ABOUT</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">0.1 + 0.2 !== 0.3</h1><div class="post-info">Feb 13, 2018</div><div class="post-content"><p>老生常谈的问题了，之前查过一次，模糊记得js、java等语言都存在此问题，后来原因又忘了，最近碰到，再补充一下。</p>
 <a id="more"></a>
 <h3 id="计算机如何用二进制表达小数？"><a href="#计算机如何用二进制表达小数？" class="headerlink" title="计算机如何用二进制表达小数？"></a>计算机如何用二进制表达小数？</h3><blockquote>
 <p>乘2取整，直至小数部分为0，然后把取的整数顺序排列</p>
@@ -16,14 +16,15 @@
 <p>0.1 <em> 2 = 0.2 取0剩余0.2<br>0.2 </em> 2 = 0.4 取0剩余0.4<br>0.4 <em> 2 = 0.8 取0剩余0.8<br>0.8 </em> 2 = 1.6 取1剩余0.6<br>0.6 * 2 = 1.2 取1剩余0.2<br>….<br>永远不会剩余0，那就是一个无线循环的数0.0001100110011…（0011保持循环）。</p>
 <p>这种情况：计算机会根据IEEE 754进行裁剪取整，这就是精度缺失的根本原因，至于截取规则，IEEE 754规定如果溢出的第一位是1，那就加1，导致某些数据截取后比真实大那么一点点，0.1恰巧因最后的溢出是1，被进位。</p>
 <p>总之精度缺失的原因来自计算机对无线循环的无奈</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><ul>
-<li>开发中避免直接判断0.1 + 0.2 === 0.3</li>
+<h3 id="总结、解决方案"><a href="#总结、解决方案" class="headerlink" title="总结、解决方案"></a>总结、解决方案</h3><ul>
+<li>认识到小数是不靠谱的，开发中避免直接此类判断0.1 + 0.2 === 0.3</li>
+<li>toFixed也因此有坑：1.005.toFixed(2)，返回的是 <code>1.00</code> 而不是 <code>1.01</code></li>
 <li>第三方工具：number-precision，bignumber.js，Math.js等，把数据转换成string进行处理，性能差点</li>
 </ul>
-</div></article></div></main><footer><div class="paginator"><a href="/2019/01/02/package.json散点拾遗/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
-var disqus_identifier = '2019/02/13/0-1-0-2-0-3/';
+</div></article></div></main><footer><div class="paginator"><a href="/2018/08/12/天！居然断更了这么久/" class="prev">PREV</a><a href="/2017/08/21/中间件/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+var disqus_identifier = '2018/02/13/0-1-0-2-0-3/';
 var disqus_title = '0.1 + 0.2 !== 0.3';
-var disqus_url = 'http://chayangge.com/2019/02/13/0-1-0-2-0-3/';
+var disqus_url = 'http://chayangge.com/2018/02/13/0-1-0-2-0-3/';
 (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
