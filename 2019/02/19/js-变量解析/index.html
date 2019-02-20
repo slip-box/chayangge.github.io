@@ -25,7 +25,8 @@
 <li>变量与形参重名时，变量声明不影响形参，如下demo：</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function test(item1,item2)&#123;</span><br><span class="line">    console.log(item1,item2); // 1, undefined</span><br><span class="line">    console.log(c); // c()&#123;&#125;  而不是undefined，因为函数提前</span><br><span class="line">    var c = 3;</span><br><span class="line">    function c()&#123;&#125;</span><br><span class="line">    </span><br><span class="line">    var item1;</span><br><span class="line">    console.log(item1); // 依然是1，没赋值，不会影响形参item1</span><br><span class="line">&#125;</span><br><span class="line">test(1);</span><br></pre></td></tr></table></figure>
-</div></article></div></main><footer><div class="paginator"><a href="/2019/02/18/js-静态作用域/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+<h3 id="与静态作用域的关系"><a href="#与静态作用域的关系" class="headerlink" title="与静态作用域的关系"></a>与静态作用域的关系</h3><p>上文中说过js的作用域是静态的，函数无论在哪里执行，其内部变量的作用域始终为创建函数是固定的，通过观察AO发现果然如此，在函数执行前去，创建作用域栈，解析当前作用域下的变量，产生了固定的AO。</p>
+</div></article></div></main><footer><div class="paginator"><a href="/2019/02/18/js-静态作用域/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2019/02/19/js-变量解析/';
 var disqus_title = 'js:变量解析';
 var disqus_url = 'http://chayangge.com/2019/02/19/js-变量解析/';
