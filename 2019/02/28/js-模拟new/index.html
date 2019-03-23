@@ -3,7 +3,7 @@
 <p>实例a可以访问构造函数中的变量，也可以访问其原型prototype上的变量和方法，下面是实现，命名为objectFactory：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">objectFactory(fn,a)&#123;</span><br><span class="line">    var obj = new Object();</span><br><span class="line">    var Constructor = [].shift.call(arguments);</span><br><span class="line">    obj.__proto__ = Constructor.prototype;</span><br><span class="line">    Constructor.apply(obj, arguments);</span><br><span class="line"></span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面这段代码，信息密度大，及其精妙。可以专写一篇介绍：</p>
-</div></article></div></main><footer><div class="paginator"><a href="/2019/02/26/js-模拟call、apply/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+</div></article></div></main><footer><div class="paginator"><a href="/2019/03/23/《金字塔原理》/" class="prev">PREV</a><a href="/2019/02/26/js-模拟call、apply/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2019/02/28/js-模拟new/';
 var disqus_title = 'js:模拟new';
 var disqus_url = 'http://chayangge.com/2019/02/28/js-模拟new/';

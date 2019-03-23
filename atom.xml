@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chayangge.com/"/>
-  <updated>2019-03-08T06:39:45.730Z</updated>
+  <updated>2019-03-23T15:43:45.786Z</updated>
   <id>http://chayangge.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《金字塔原理》</title>
+    <link href="http://chayangge.com/2019/03/23/%E3%80%8A%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E3%80%8B/"/>
+    <id>http://chayangge.com/2019/03/23/《金字塔原理》/</id>
+    <published>2019-03-23T12:49:15.000Z</published>
+    <updated>2019-03-23T15:43:45.786Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实很多书翻来覆去就说了一句话，《金字塔原理》这本书也是。<br>这句话就是写在书皮扉页上：</p><blockquote><p>金字塔的基本机构是：中心思想明确，结论先行，以上统下，归类分组，逻辑递进。先重要后次要，先全局后细节，先结论后原因，先结果后过程。</p></blockquote><p>没错，这是一本工具书，本书的所有内容无非是对这段话，在表达、沟通上的详细论证和举例绘图描述，书中法门对经常汇报工作的高层来说已经是基本常识，对新人来说也谈不上高深，毕竟有些细节旁敲侧击是听说过的，经过系统性的描述和举例后会更加深刻，会清晰认识到到这本书果然是意如其名，从而在日后的沟通、写作、汇报细节上加以联=练习使用，从而成为自己的“常识”。</p><h3 id="为什么要使用金字塔原理"><a href="#为什么要使用金字塔原理" class="headerlink" title="为什么要使用金字塔原理"></a>为什么要使用金字塔原理</h3><p>也就是为什么对外输出表达要有结构？<br>数字7，或者类似范围的数字，大概5-9之间是人脑所能hold住的并发数，管理1-3个项目还是挺轻松的，5-9个项目或信息点同时汇过来，人脑就不行了，需要排个层级顺序，利于消化，并且：</p><p>人脑天然喜欢归类、抽象和总结，比如：</p><ul><li>从繁星中看到图案</li><li>从杂乱的图中看到人脸</li></ul><p>所以保证结构输出的原因是：</p><ul><li>头脑经历有限</li><li>头脑偏好归类、抽象信息，而不是杂乱分散</li></ul><h3 id="金字塔顶尖：结论先行"><a href="#金字塔顶尖：结论先行" class="headerlink" title="金字塔顶尖：结论先行"></a>金字塔顶尖：结论先行</h3><p>一步到位告诉结果，是汇报的首要前提，不要拖泥带水讲原因细节，假设有人向你汇报，你当然最想知道的就是结果如何，其次才会想了解背后原因过程。</p><h3 id="金字塔基座：原因平级归属，有逻辑，有顺序"><a href="#金字塔基座：原因平级归属，有逻辑，有顺序" class="headerlink" title="金字塔基座：原因平级归属，有逻辑，有顺序"></a>金字塔基座：原因平级归属，有逻辑，有顺序</h3><p>给出支撑结论的依据：之所以【这个结果】，是因为：1，2，3这么几项。注意：这里的1，2，3是平级且有关联的，且都是核心重头原因，如果原因1的背后还有细节子原因，请不要不在追加在后面，而是把子原因铺在下一个层级里。</p><p>归纳论点需要注意：</p><ul><li>论点之前有关联，属于同一逻辑范畴</li><li>任意上层是对其下层的总结概括</li><li>排好顺序，排序规则：按时间、大小前提，重要顺序，步骤顺序</li></ul><p>总之：纵向总结，横向逻辑统一。</p><h3 id="思考的自下而上方法"><a href="#思考的自下而上方法" class="headerlink" title="思考的自下而上方法"></a>思考的自下而上方法</h3><p>当你暂时还锚定不了一个主题，无法确定读者疑问或读者想了解什么，也就是还没有稳住金字塔塔尖，只有一对无机构的散点描述信息时，可以按自下而上的方法，构建你的金字塔：</p><ul><li>列出所有散落的点信息</li><li>找出这些点之间的关联，肯定有平级的，有关关系的，承上启下的等等</li><li>铺平，累加，找到这些点汇聚的结论，那就是金字塔塔尖</li></ul><p>自下而上完全是这本书的意外收获。</p><h3 id="信息自我归纳"><a href="#信息自我归纳" class="headerlink" title="信息自我归纳"></a>信息自我归纳</h3><p>例子：</p><blockquote><p>日本商人加大对中国的投资<br>美国商人加大对中国的投资<br>德国商人加大对中国的投资<br>可归纳为：<br>投资商们加大对中国的投资</p></blockquote><p>例子：</p><blockquote><p>日本商人加大对中国的投资<br>日本商人加大对印尼的投资<br>日本商人加大对马来的投资<br>可归纳为：<br>日本商人加大对东南亚的投资</p></blockquote><p>归纳的前提是有共同性，如果是其他分散的无关联地区则无法归纳，要记：将一个思想与其他思想共同写进谋篇文章的唯一理由，就是这个思想有利于对一个更高层次上的思想提供解释或支持。</p><h3 id="分组原则"><a href="#分组原则" class="headerlink" title="分组原则"></a>分组原则</h3><h4 id="因果别混杂"><a href="#因果别混杂" class="headerlink" title="因果别混杂"></a>因果别混杂</h4><p>计划行动步骤中，不要把行动和结果平级列入，要把结果写成对结果的“行动”，而非在行动中插一条无行为动作的结果信息描述。</p><h4 id="MECE原则"><a href="#MECE原则" class="headerlink" title="MECE原则"></a>MECE原则</h4><ul><li>各模块相互独立（mutually exclusive），相互排斥，不重叠</li><li>穷尽所有模块（collectively exhaustive），不遗漏</li></ul><p>本书最后，引用赫伯特·西蒙：解决问题只不过是通过对问题的表述，使解决方案不言自明。</p><p>于此类似的有吉德林法则：把难题清清楚楚地写出来，便已经解决了一半。</p><p>还有：暴露问题是解决的第一步。</p><p>而金字塔原理就是帮我们更好的描述问题，输出信息。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;其实很多书翻来覆去就说了一句话，《金字塔原理》这本书也是。&lt;br&gt;这句话就是写在书皮扉页上：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;金字塔的基本机构是：中心思想明确，结论先行，以上统下，归类分组，逻辑递进。先重要后次要，先全局后细节，先结论后原因，先结果后过程。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="http://chayangge.com/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>js:模拟new</title>
@@ -431,26 +457,6 @@
     
     
       <category term="node" scheme="http://chayangge.com/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python的GIL</title>
-    <link href="http://chayangge.com/2017/03/28/python%E7%9A%84GIL/"/>
-    <id>http://chayangge.com/2017/03/28/python的GIL/</id>
-    <published>2017-03-28T01:58:35.000Z</published>
-    <updated>2017-03-28T07:22:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>前几天用Python写爬虫，想用多线程写一个能充分调用CPU的高效爬虫，毕竟和js相比，Python天生支持多线程、多进程的，不像js的单线程，一次之能执行一个任务。结果无意间发现了Python的GIL，了解GIL首先要理解一下概念：线程与进程，并行与并发，单核与多核。<br><a id="more"></a></p><h2 id="线程与进程、单核与多核、并行与并发"><a href="#线程与进程、单核与多核、并行与并发" class="headerlink" title="线程与进程、单核与多核、并行与并发"></a>线程与进程、单核与多核、并行与并发</h2><p>线程是进程的子集，也就是一个进程至少包含一个线程，计算机每处理一个任务就是处理一个进程，该进程可能包含了多个线程，比如执行人执行一个跳跃动作（线程），这个动作就是由多个线程完成的，包括膝盖弯曲，脚踝发力，手臂摆动等多个组合动作。</p><p>现在的CPU都是多核了，基本上是4-8核，双核的都少了，多核相当于多个CPU。在古老的年代，CPU处理能力很低，一个单核CPU同时只能执行一个任务（虽然现在也是），这导致听歌只能听歌，播放视频只能播放视频，如果要读写文件CPU必须等着啥也不干，直到文件读取完毕才能计算，这显然不可取，所以目前操作系统采用了以下两个处理方案：</p><ul><li>每个任务都只执行一会，然后切换到其他任务（分时系统）</li><li>每个任务分配优先级权限，操作系统可强制安排优先的任务执行（抢占式）</li></ul><p>所以这形成了多任务完美『并行』的假象（即可听歌、看电影、又可同时敲代码），然而对单核CPU来说这其实是并发：多个任务同时存在，但轮流执行，同一时间只执行一个。想要并行？除非有多个CPU，也就是现在常见的多核CPU。</p><h2 id="Python的多线程与多进程"><a href="#Python的多线程与多进程" class="headerlink" title="Python的多线程与多进程"></a>Python的多线程与多进程</h2><p>以上说了这么多都是操作系统的基本知识，很多语言都能调用系统以多进程，多线程的方式运行，这里排除js，因为js天生单线程，而Python不是，即可多线程又可多进程。如果想让python爬虫执行的更快，可以：</p><ul><li>开启多线程</li><li>开启多进程</li><li>多进程下再开启多线程<br>理论上很完美，但实际上，你会碰到GIL，这个天生的紧箍咒把Python这匹千里马压制的普普通通。</li></ul><p>执行以下代码，在mac的活动监视器中查看CPU利用率：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading, multiprocessing</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop</span><span class="params">()</span>:</span></span><br><span class="line">    x = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        x = x ^ <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(multiprocessing.cpu_count()):</span><br><span class="line">    t = threading.Thread(target=loop)</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure></p><p>上述代码启用了CPU的所有内核一起死循环，按理说每个核该跑满了显示100%，我的是4核，此时监视器应该显示400%，可实际上却显示160%，这说明CPU并没有因Python启用了多线程而充分调度起来。</p><p>语言的编译需要解释器，Python官方的解释器是CPython，也是目前用的最多的解释器，而GIL就存在CPython中，所以Python语言的指的就是CPython中的GIL（Global Interpreter Lock）即全局解释器锁。</p><p>当Python以多线程运行时，本以为可以效率翻倍，然而现实情况是：每个线程在执行前需要获得全局GIL锁才可，线程再多可GIL锁只有一个，一个线程拿到锁，运行100条字节码后必须把锁交出来，让别的线程运行一会——像不像CPU的分时系统？表面是多线程一起执行，实际上是用快速切换的方式，每个执行一会，造成一起执行的假象。</p><p>所以上述代码之所以只用全部CPU的160%，是因为受到了GIL锁的限制。</p><h2 id="有弊就有利"><a href="#有弊就有利" class="headerlink" title="有弊就有利"></a>有弊就有利</h2><p>如果一味抨击GIL的话也是不公平的，如果GIL是万恶的源头的话那么想一想：</p><ul><li>毕竟也有不带GIL的Python解释器，可为什么那些解释器没有被广泛使用呢？</li><li>如果是早期历史遗留问题，为什么Python3 依然没有摘除GIL呢？</li></ul><p>多线程是否真的完美呢？单线程真的很慢吗？并不一定。线程的却换运行需要切换线程上下文，这自然也是一笔开销，CPU忙于多线程的切换工作导致线程运行效率降低，有时反而低于单线程。</p><h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>GIL限制了多线程，也就是说GIL针对的是一个进程下的多线程，如果启用多进程呢？进城之间相互独立，也没有『进程锁』的东西，貌似可以，这也是multiprocessing的由来，用multiprocessing创建的多进程再也没有GIL的限制，就能充分利用多核CPU的性能。除此之外还有c语言扩展机制、ctypes等方法，这些没做研究，不敢瞎写。</p><h2 id="单线程的优势"><a href="#单线程的优势" class="headerlink" title="单线程的优势"></a>单线程的优势</h2><p>单线程自然有单线程的优势和应用场景，比如单线程的程序状态单一稳定，没有通信、锁等问题，也不用来回切换上下文，更好的提高CPU使用率。除此之外Nginx、nodeJS、PHP也都是单线程，但针对单线程的弊端也都有优化机制，比如nodeJS的child_process模块。</p><p>总之这是一个取舍问题，根据自己的业务环境，总有适合的技术方案。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;前几天用Python写爬虫，想用多线程写一个能充分调用CPU的高效爬虫，毕竟和js相比，Python天生支持多线程、多进程的，不像js的单线程，一次之能执行一个任务。结果无意间发现了Python的GIL，了解GIL首先要理解一下概念：线程与进程，并行与并发，单核与多核。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://chayangge.com/tags/python/"/>
     
   </entry>
   
