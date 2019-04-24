@@ -32,7 +32,7 @@
 </ul>
 <p>这里整个登录流程就已经实现，下面说一下退出流程。</p>
 <h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><p>退出请求依然会带上token，根据token解密出登录信息和上述accessToken，拿accessToken去请求中央服务器的退出接口声明废弃此accessToken，然后清除cookie，如果cookie内容是token的话也就是清除了token，并在响在重定向到最开始的登录页或其他你想要的页面。</p>
-</div></article></div></main><footer><div class="paginator"><a href="/2019/03/23/《金字塔原理》/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+</div></article></div></main><footer><div class="paginator"><a href="/2019/03/23/《金字塔原理》/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2019/04/23/基于CAS的SSO基本实现流程/';
 var disqus_title = '基于CAS的SSO基本实现流程';
 var disqus_url = 'http://chayangge.com/2019/04/23/基于CAS的SSO基本实现流程/';
