@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chayangge.com/about/index.html</loc>
+    
+    <lastmod>2019-04-26T03:11:08.491Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://chayangge.com/2019/04/25/%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86/</loc>
     
     <lastmod>2019-04-25T16:45:50.570Z</lastmod>
@@ -82,13 +89,6 @@
     <loc>http://chayangge.com/2018/12/28/%E7%AC%94%E5%B0%96%E4%B8%8B%E7%9A%84%E6%B7%B1%E5%88%BB%E2%80%94%E2%80%94%E6%9D%91%E4%B8%8A%E6%98%A5%E6%A0%91/</loc>
     
     <lastmod>2018-12-28T11:40:05.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://chayangge.com/about/index.html</loc>
-    
-    <lastmod>2018-12-28T09:08:46.000Z</lastmod>
     
   </url>
   
@@ -219,7 +219,14 @@
   </url>
   
   <url>
-    <loc>http://chayangge.com/2017/03/05/2017-03-05%20%E6%94%B6%E5%89%B2%E4%B8%8E%E8%A2%AB%E6%94%B6%E5%89%B2/</loc>
+    <loc>http://chayangge.com/2017/01/18/2017-01-18%20%E9%92%B1%E7%9A%84%E8%AF%B1%E6%83%91/</loc>
+    
+    <lastmod>2017-03-24T10:15:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://chayangge.com/2016/12/04/2016-12-04%20%E9%85%92%E5%B1%80/</loc>
     
     <lastmod>2017-03-24T10:15:24.000Z</lastmod>
     
@@ -240,21 +247,14 @@
   </url>
   
   <url>
+    <loc>http://chayangge.com/2017/03/05/2017-03-05%20%E6%94%B6%E5%89%B2%E4%B8%8E%E8%A2%AB%E6%94%B6%E5%89%B2/</loc>
+    
+    <lastmod>2017-03-24T10:15:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://chayangge.com/2016/08/21/2016-08-21%20%E5%90%8C%E7%90%86%E5%BF%83%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</loc>
-    
-    <lastmod>2017-03-24T10:15:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://chayangge.com/2016/12/04/2016-12-04%20%E9%85%92%E5%B1%80/</loc>
-    
-    <lastmod>2017-03-24T10:15:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://chayangge.com/2017/01/18/2017-01-18%20%E9%92%B1%E7%9A%84%E8%AF%B1%E6%83%91/</loc>
     
     <lastmod>2017-03-24T10:15:24.000Z</lastmod>
     
