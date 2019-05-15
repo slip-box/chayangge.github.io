@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chayangge.com/"/>
-  <updated>2019-04-28T09:13:08.000Z</updated>
+  <updated>2019-05-15T16:50:36.598Z</updated>
   <id>http://chayangge.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP协议变迁</title>
+    <link href="http://chayangge.com/2019/05/09/http%E5%8D%8F%E8%AE%AE%E5%8F%98%E8%BF%81/"/>
+    <id>http://chayangge.com/2019/05/09/http协议变迁/</id>
+    <published>2019-05-09T03:36:42.000Z</published>
+    <updated>2019-05-15T16:50:36.598Z</updated>
+    
+    <content type="html"><![CDATA[<p>http协议是一个不大不小的知识体系，当新手还没有整体视角的时候，只会记忆某一版本的某一特性，以为搞懂了一个知识点但随后又发现一个更大的盲区。当抛弃这些繁杂知识点，以解决互联网传输问题为导向，才能更好的理解http的变迁，毕竟http和软件开发有诸多类似，都是一个根据发展现状不算迭代补漏的过程，毕竟设计者也没有预支未来的能力，而这些迭代主要在以下方面：</p><ul><li>丰富传输内容：最开始并不支持图片视频类的多媒体文件</li><li>减少来回传输次数：减少RTT（Round Trip Time）即消息一来一回所花费的时间</li><li>一次传输尽可能传输更多：压缩</li><li>尽可能多路复用</li><li>加密</li><li>缓存：减少不必要的传输</li></ul><p>###先看时间线<br>1991年：http0.9 那个年代的互联网有多简陋可想而知，仅支持get<br>1996年：http1.0 不够用了，添加请求方法POST用于提交，文件类型，如图片视频，添加请求头http Header<br>1997年：http1.1 目前用的都是1.1，居然诞生于二十多年前<br>2009年：SPDY1 （http2前身）<br>2012年：SPDY2 （http2前身）<br>2015年：http2</p><h3 id="http1-1"><a href="#http1-1" class="headerlink" title="http1.1"></a>http1.1</h3><p>1997年的http1.1引入和很多实用机制：</p><ul><li>持久连接： 减少了RTT，不必每次都重新建立tcp链接，重复三次握手</li><li>分块传输编码 </li><li>缓存控制机制：减少没必要的传输</li><li>内容协商机制：给请求头中客户端所期望的内容，如json，text等</li><li>管道机制：尴尬</li></ul><p>持久连接依然有性能问题：http1中每个请求和响应都有建立一个tcp连接，虽然1.1引用了持久连接机制，但每个连接上同时只能有一个请求或响应，这样，一来，一回完成后，再继续下一个一来一回，处于半双工状态利用率不高。因为服务器发送第一个响应后，到手打第二个请求之前，都是空闲状态。<br>为了解决此问题，引入了管道。</p><p>尴尬的管道机制：管道可以让浏览器把所有请求都发过来，服务器则可以响应一个后继续响应下一个，但有个严重的问题：当第一个非常耗时阻塞时，后续所有响应都要等待，这就是队首阻塞问题（Head-of-Line Blocking）。<br>第二个主要尴尬原因：链路中间的其他设备不一定支持管道，这些导致管道一直处于理论状态，实际应用很少。</p><p>题外话：现代浏览器允许统一域名下并发连接6-8个tcp连接，为此很多网页静态资源放在散列的多个域名下。</p><p>还有请求头是未压缩的纯文本，且有很多冗余信息，如cookie、UserAgent等，造成不必要的浪费，优化方法是采用短小的独立域名托管静态资源：1.域名段，字段少，2.独立域名不共享cookie减少无用内容。</p><h3 id="http2"><a href="#http2" class="headerlink" title="http2"></a>http2</h3><ul><li><p>格式化传输数据：<br>http1.1中请求和响应报文，由起始行、首部和实体正文组成，中间由文本换行符分割，http2把报文分割成更小的帧，并进行二进制编码，帧（Frame）作为http2通信的最小单位。帧都包含帧首部用来进行流标识，这样帧可以乱序发送，最后靠首部的流标识进行顺序组装。</p></li><li><p>多路复用<br>http2中，同域名下的所有通信都在一个tcp连接上完成，且连接是双向通信数据流，这正是tcp协议的长项：三次握手后，持续发送大量数据。<br>重点：之前http之所以性能差，是因为频繁建立多个tcp，虽然基于tcp，但因为一次连接传输内容少，而连接频发，导致tcp的优势利于的少，劣势利用的多。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;http协议是一个不大不小的知识体系，当新手还没有整体视角的时候，只会记忆某一版本的某一特性，以为搞懂了一个知识点但随后又发现一个更大的盲区。当抛弃这些繁杂知识点，以解决互联网传输问题为导向，才能更好的理解http的变迁，毕竟http和软件开发有诸多类似，都是一个根据发展现
+      
+    
+    </summary>
+    
+    
+      <category term="http" scheme="http://chayangge.com/tags/http/"/>
+    
+  </entry>
   
   <entry>
     <title>instanceof</title>
@@ -446,26 +469,6 @@
     
     
       <category term="js" scheme="http://chayangge.com/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中间件</title>
-    <link href="http://chayangge.com/2017/08/21/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
-    <id>http://chayangge.com/2017/08/21/中间件/</id>
-    <published>2017-08-21T03:56:16.000Z</published>
-    <updated>2017-09-04T02:19:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>中间件，对新手来说又是个不明觉厉的词汇，简单地说，几乎所有的应用都是一个服务器收发的过程，客户端通过http发送请求，服务器收到请求后给出响应，这是整个互联网的运作方式，而中间件，顾名思义，就是在收发之间做逻辑处理。<br><a id="more"></a><br>业界有句名言：</p><blockquote><p>计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决<br>“Any problem  in computer science can be solved by anther layer of indirection.”</p></blockquote><p>仔细想一下很多问题都是通过添加独立的层的概念来解决的，包括一些已经作为常识的知识，比如：互联网层的划分，从底层的物理层，到上层的应用层，彼此层之间相互独立，各司其职，以后再有什么升级或改动，保证原有层不变的基础上，添加一个层承上启下，即可。比如HTTPS就是在HTTP的基础上多了一层加密层。</p><p>而中间件的概念貌似也是如此。一个中间件就是一个功能层，相互独立，各司其职。</p><p>以express中间件为例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listen 3000...'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.use(middleware1);</span><br><span class="line">app.use(middleware2);</span><br><span class="line">app.use(middleware3);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">middleware1</span>(<span class="params">req, res, next</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"我是1"</span>);</span><br><span class="line">next();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"我是1，out"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">middleware2</span>(<span class="params">req, res, next</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"我是2"</span>);</span><br><span class="line">next();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"我是2，out"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">middleware3</span>(<span class="params">req, res, next</span>)</span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"我是3"</span>);</span><br><span class="line">next();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"我是3，out"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>app.use方法用来接收中间件1、2、3，其执行结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">listen 3000...</span><br><span class="line">我是1</span><br><span class="line">我是2</span><br><span class="line">我是3</span><br><span class="line">我是3，out</span><br><span class="line">我是2，out</span><br><span class="line">我是1，out</span><br></pre></td></tr></table></figure></p><p>为什么遇到next后就直接跳转，等所有next执行完毕才回溯执行各自next后面的代码呢？app.use内部又是怎么回事呢？</p><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>从结果可以看出，多个中间件的执行顺序是按栈结构执行的，首先遇到next跳转到下一个中间件执行，直到最内部的中间值执行完毕后，才执行最内部中间件next后面的代码，执行完后才返回上一层执行上一层中间件next后面的代码，像极了洋葱图。</p><p>而在代码层面上，每当调用app.use添加中间件时，其实内部维护了一个数组，把这些追加的中间件push进去，然后反方向执行，先执行数组最末端的中间件，直到第一个push进去的中间件，这样就实现了上述中间件调用效果。demo：</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;中间件，对新手来说又是个不明觉厉的词汇，简单地说，几乎所有的应用都是一个服务器收发的过程，客户端通过http发送请求，服务器收到请求后给出响应，这是整个互联网的运作方式，而中间件，顾名思义，就是在收发之间做逻辑处理。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="node" scheme="http://chayangge.com/tags/node/"/>
     
   </entry>
   
