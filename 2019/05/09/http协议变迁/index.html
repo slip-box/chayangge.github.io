@@ -39,7 +39,7 @@
 <p>由此google设计了QUIC协议，使用UPD，也就是http3.0的前身；<br>UPD简洁，只对IP层做了简单的封装；不需要握手和挥手（建连、断连），通信成本低，灵活、高效，“可塑性”很强。</p>
 <p>但没有丢包重发、拥塞窗口等策略的UDP并不可靠，于是QUIC取其精华、去其糟粕：用自己的协议规则实现了一套可靠传输协议；<br>HTTP/3 没有指定默认端口号，需要用 HTTP/2 的扩展帧“Alt-Svc”来发现</p>
 <p>由此可见，http3.0的优化不再是http层面，而是底层tcp层面，http为了让自己更优秀，顺便把自己的底层依赖tcp也给优化掉了；</p>
-</div></article></div></main><footer><div class="paginator"><a href="/2020/09/17/SSE/" class="prev">PREV</a><a href="/2019/04/28/instanceof/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+</div></article></div></main><footer><div class="paginator"><a href="/2020/09/17/SSE/" class="prev">上一篇</a><a href="/2019/04/28/instanceof/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2019/05/09/http协议变迁/';
 var disqus_title = 'HTTP协议变迁';
 var disqus_url = 'http://chayangge.com/2019/05/09/http协议变迁/';
