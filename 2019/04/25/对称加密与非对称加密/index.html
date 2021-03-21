@@ -23,7 +23,7 @@
 <p>当通信时，对方不仅提供自己的公钥，还要提供公钥的证书，接收方收到后，用公证处的公钥解密证书上的密文，判断解密出公钥和一起收到的公钥是否一致，一致则说明可靠。（密文是公证处私钥加密的，所以之能用公证处的公钥解开）</p>
 <p>公证处的公钥就是【根证书】，我们的电脑上已经预装了。</p>
 <h3 id="如何使用证书"><a href="#如何使用证书" class="headerlink" title="如何使用证书"></a>如何使用证书</h3><p>先拿个人信息去公证处申请，把成功后得到的证书，放在自己的服务器上，公证处的公钥【根证书】已经预装在电脑本地了，所以服务器向浏览器通信时，向浏览器发出自己公钥和证书，浏览器拿根证书解密证书上的密文，发现与收到公钥一样，判断为信任，从而建立起https加密链接。</p>
-</div></article></div></main><footer><div class="paginator"><a href="/2019/04/28/instanceof/" class="prev">上一篇</a><a href="/2019/04/23/基于CAS的SSO基本实现流程/" class="next">下一篇</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
+</div></article></div></main><footer><div class="paginator"><a href="/2019/04/28/instanceof/" class="prev">PREV</a><a href="/2019/04/23/基于CAS的SSO基本实现流程/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
 var disqus_identifier = '2019/04/25/对称加密与非对称加密/';
 var disqus_title = '对称加密与非对称加密';
 var disqus_url = 'http://chayangge.com/2019/04/25/对称加密与非对称加密/';
