@@ -23,7 +23,7 @@
 <h3 id="http2"><a href="#http2" class="headerlink" title="http2"></a>http2</h3><ul>
 <li><p>格式化传输数据：<br>http1.1中请求和响应报文，由起始行、首部和实体正文组成，中间由文本换行符分割，http2把报文分割成更小的帧，并进行二进制编码，帧（Frame）作为http2通信的最小单位。帧都包含帧首部用来进行流标识，这样帧可以乱序发送，最后靠首部的流标识进行顺序组装。</p>
 </li>
-<li><p>多路复用<br>http2中，同域名下的所有通信都在一个tcp连接上完成，且连接是双向通信数据流，这正是tcp协议的长项：三次握手后，持续发送大量数据。<br>重点：之前http之所以性能差，是因为频繁建立多个tcp，虽然基于tcp，但因为一次连接传输内容少，而连接频发，导致tcp的优势利于的少，劣势利用的多。</p>
+<li><p>多路复用<br>http2中，同域名下的所有通信都在一个tcp连接上完成，且连接是双向通信数据流，这正是tcp协议的长项：三次握手后，持续发送大量数据。<br>重点：之前http之所以性能差，是因为频繁建立多个tcp，虽然基于tcp，但因为一次连接传输内容少，而连接频发，导致tcp的优势利于的少，劣势利用的多;</p>
 </li>
 </ul>
 </div></article></div></main><footer><div class="paginator"><a href="/2020/09/17/SSE/" class="prev">PREV</a><a href="/2019/04/28/instanceof/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'seansun';
